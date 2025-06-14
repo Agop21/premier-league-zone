@@ -70,4 +70,12 @@ public class PlayerService {
     public void deletePlayer(Long id) {
         playerRepository.deleteById(id);
     }
+
+    public List<String> getAllTeams() {
+        return playerRepository.findAll().stream()
+                .map(Player::getTeam)
+                .distinct()
+                .toList();
+    }
+
 }

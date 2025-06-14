@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/head :: head}"></head>
+<body>
+
+<!-- Header -->
+<th:block th:insert="~{fragments/header :: header}"/>
+
+<!-- Main Hero Section -->
+<main>
+    <section class="hero mb-0 pb-0">
+        <div class="container text-center text-white">
+            <h1 class="display-4">Welcome to PremierZone</h1>
+            <p class="lead">Explore Premier League stats, players, and more.</p>
+            <a th:href="@{/teams}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<th:block th:insert="~{fragments/footer :: footer}"/>
+
+</body>
+</html>
