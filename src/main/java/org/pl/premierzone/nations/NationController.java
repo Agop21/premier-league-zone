@@ -5,8 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/nations")
@@ -21,14 +22,18 @@ public class NationController {
 
     @GetMapping
     public String showNations(Model model) {
-        model.addAttribute("nations", playerService.getAllNations());
+        List<NationOption> nationOptions = playerService.getAllNations().stream()
+                .map(value -> {
+                    String code = NationFlag.extractCode(value);
+                    String flagIconClass = NationFlag.fromCode(code).getFlagIconClass();
+                    return new NationOption(value, code, flagIconClass);
+                })
+                .toList();
+
+        model.addAttribute("nations", nationOptions);
         return "nations";
     }
 
-    @GetMapping("/{nation}")
-    public String showPlayersByNation(@PathVariable String nation, Model model) {
-        model.addAttribute("nation", nation);
-        model.addAttribute("players", playerService.getPlayersByNation(nation));
-        return "players-by-nation";
+    public record NationOption(String name, String code, String flagIconClass) {
     }
 }
