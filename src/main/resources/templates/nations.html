@@ -15,7 +15,7 @@
                 th:href="@{/data(nation=${nationItem.code})}"
                 class="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm transition hover:shadow-md hover:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
-            <div class="text-4xl" th:text="${nationItem.flag}">🌍</div>
+            <span th:class="${nationItem.flag} + ' text-4xl'"></span>
             <div class="mt-2 text-sm font-semibold text-gray-800" th:text="${nationItem.code}">NAT</div>
             <div class="text-xs text-gray-500 mt-1" th:text="${nationItem.name}">Nation</div>
         </a>

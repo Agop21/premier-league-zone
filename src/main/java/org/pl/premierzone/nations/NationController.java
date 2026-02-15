@@ -25,7 +25,7 @@ public class NationController {
         List<NationOption> nationOptions = playerService.getAllNations().stream()
                 .map(value -> {
                     String code = NationFlag.extractCode(value);
-                    String flag = NationFlag.fromCode(code).getEmoji();
+                    String flag = NationFlag.fromCode(code).getFlagIconClass();
                     return new NationOption(value, code, flag);
                 })
                 .toList();

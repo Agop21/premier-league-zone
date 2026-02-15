@@ -3,58 +3,86 @@ package org.pl.premierzone.nations;
 import java.util.Arrays;
 
 public enum NationFlag {
-    ARG("🇦🇷"),
-    AUS("🇦🇺"),
-    AUT("🇦🇹"),
-    BEL("🇧🇪"),
-    BRA("🇧🇷"),
-    CAN("🇨🇦"),
-    CIV("🇨🇮"),
-    CRO("🇭🇷"),
-    CZE("🇨🇿"),
-    DEN("🇩🇰"),
-    EGY("🇪🇬"),
-    ENG("🏴"),
-    ESP("🇪🇸"),
-    FRA("🇫🇷"),
-    GEO("🇬🇪"),
-    GER("🇩🇪"),
-    GHA("🇬🇭"),
-    GRE("🇬🇷"),
-    IRL("🇮🇪"),
-    ITA("🇮🇹"),
-    JAM("🇯🇲"),
-    JPN("🇯🇵"),
-    KOR("🇰🇷"),
-    MAR("🇲🇦"),
-    MEX("🇲🇽"),
-    NED("🇳🇱"),
-    NGA("🇳🇬"),
-    NOR("🇳🇴"),
-    NZL("🇳🇿"),
-    PAR("🇵🇾"),
-    POL("🇵🇱"),
-    POR("🇵🇹"),
-    SCO("🏴"),
-    SEN("🇸🇳"),
-    SRB("🇷🇸"),
-    SUI("🇨🇭"),
-    SWE("🇸🇪"),
-    TUN("🇹🇳"),
-    UKR("🇺🇦"),
-    URU("🇺🇾"),
-    USA("🇺🇸"),
-    WAL("🏴"),
-    UNKNOWN("🌍");
+    ARG("ar"),
+    ALB("al"),
+    AUS("au"),
+    AUT("at"),
+    BEL("be"),
+    BIH("ba"),
+    BRA("br"),
+    CAN("ca"),
+    COD("cd"),
+    COL("co"),
+    CIV("ci"),
+    CMR("cm"),
+    CRO("hr"),
+    CZE("cz"),
+    DEN("dk"),
+    DZA("dz"),
+    ECU("ec"),
+    EGY("eg"),
+    ENG("gb-eng"),
+    ESP("es"),
+    EST("ee"),
+    FIN("fi"),
+    FRA("fr"),
+    GEO("ge"),
+    GIN("gn"),
+    GER("de"),
+    GHA("gh"),
+    GAB("ga"),
+    NIR("gb"),
+    GRE("gr"),
+    IRL("ie"),
+    ISR("il"),
+    IRQ("iq"),
+    IRN("ir"),
+    ITA("it"),
+    JAM("jm"),
+    JPN("jp"),
+    KOR("kr"),
+    LBR("lr"),
+    MAR("ma"),
+    MEX("mx"),
+    MNE("me"),
+    MLI("ml"),
+    MSR("ms"),
+    NED("nl"),
+    NGA("ng"),
+    NOR("no"),
+    NZL("nz"),
+    PAR("py"),
+    POL("pl"),
+    POR("pt"),
+    SCO("gb-sct"),
+    SEN("sn"),
+    SRB("rs"),
+    SUI("ch"),
+    SVK("sk"),
+    SWE("se"),
+    TUN("tn"),
+    TUR("tr"),
+    UKR("ua"),
+    URU("uy"),
+    USA("us"),
+    VEN("ve"),
+    WAL("gb-wls"),
+    ZAM("zm"),
+    ZIM("zw"),
+    UNKNOWN("un");
 
-    private final String emoji;
+    private final String flagIconCode;
 
-    NationFlag(String emoji) {
-        this.emoji = emoji;
+    NationFlag(String flagIconCode) {
+        this.flagIconCode = flagIconCode;
     }
 
-    public String getEmoji() {
-        return emoji;
+    public String getFlagIconCode() {
+        return flagIconCode;
+    }
+
+    public String getFlagIconClass() {
+        return "fi fi-" + flagIconCode;
     }
 
     public static NationFlag fromCode(String code) {
