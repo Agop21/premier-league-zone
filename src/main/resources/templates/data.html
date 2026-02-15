@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}"></head>
+<body class="pt-24">
+
+<th:block th:insert="~{./fragments/header.html}" />
+
+<main class="container mx-auto px-6 pb-12">
+    <div class="flex items-center justify-between flex-wrap gap-4 mb-6">
+        <h2 class="text-2xl font-semibold" th:text="|Players Data - ${selectedNation}|">Players Data</h2>
+        <a th:href="@{/nations}" class="text-sm font-semibold text-indigo-600 hover:text-indigo-500">← Back to nations</a>
+    </div>
+
+    <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="min-w-full text-sm text-left">
+            <thead class="bg-gray-900 text-white">
+            <tr>
+                <th class="px-4 py-3">Name</th>
+                <th class="px-4 py-3">Position</th>
+                <th class="px-4 py-3">Team</th>
+                <th class="px-4 py-3">Age</th>
+                <th class="px-4 py-3">Goals</th>
+                <th class="px-4 py-3">Assists</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(players)}">
+                <td colspan="6" class="px-4 py-6 text-center text-gray-500">No players found for this nation.</td>
+            </tr>
+            <tr th:each="player : ${players}" class="odd:bg-white even:bg-gray-50">
+                <td class="px-4 py-3 border-t border-gray-200" th:text="${player.name}"></td>
+                <td class="px-4 py-3 border-t border-gray-200" th:text="${player.position}"></td>
+                <td class="px-4 py-3 border-t border-gray-200" th:text="${player.team}"></td>
+                <td class="px-4 py-3 border-t border-gray-200" th:text="${player.age}"></td>
+                <td class="px-4 py-3 border-t border-gray-200" th:text="${player.goals}"></td>
+                <td class="px-4 py-3 border-t border-gray-200" th:text="${player.assists}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<th:block th:insert="~{./fragments/footer.html}" />
+</body>
+</html>
