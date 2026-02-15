@@ -3,12 +3,25 @@
 <head th:insert="~{./fragments/head.html}"></head>
 <body class="d-flex flex-column min-vh-100">
 
-<!-- Header -->
 <th:block th:insert="~{./fragments/header.html}" />
 
+<main class="flex-1 container mx-auto px-6 py-24">
+    <h2 class="text-center text-3xl font-semibold">Browse Players by Nation</h2>
+    <p class="text-center text-gray-600 mt-2 mb-10">Click a flag to open players data for that nation.</p>
 
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <a
+                th:each="nationItem : ${nations}"
+                th:href="@{/data(nation=${nationItem.code})}"
+                class="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm transition hover:shadow-md hover:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        >
+            <div class="text-4xl" th:text="${nationItem.flag}">🌍</div>
+            <div class="mt-2 text-sm font-semibold text-gray-800" th:text="${nationItem.code}">NAT</div>
+            <div class="text-xs text-gray-500 mt-1" th:text="${nationItem.name}">Nation</div>
+        </a>
+    </div>
+</main>
 
-<!-- Footer -->
-<!--<th:block th:insert="~{./fragments/footer.html}" />-->
+<th:block th:insert="~{./fragments/footer.html}" />
 </body>
 </html>
