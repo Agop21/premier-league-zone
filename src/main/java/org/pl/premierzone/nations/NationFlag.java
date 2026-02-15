@@ -3,62 +3,58 @@ package org.pl.premierzone.nations;
 import java.util.Arrays;
 
 public enum NationFlag {
-    ARG("ar"),
-    AUS("au"),
-    AUT("at"),
-    BEL("be"),
-    BRA("br"),
-    CAN("ca"),
-    CIV("ci"),
-    CRO("hr"),
-    CZE("cz"),
-    DEN("dk"),
-    EGY("eg"),
-    ENG("gb-eng"),
-    ESP("es"),
-    FRA("fr"),
-    GEO("ge"),
-    GER("de"),
-    GHA("gh"),
-    GRE("gr"),
-    IRL("ie"),
-    ITA("it"),
-    JAM("jm"),
-    JPN("jp"),
-    KOR("kr"),
-    MAR("ma"),
-    MEX("mx"),
-    NED("nl"),
-    NGA("ng"),
-    NOR("no"),
-    NZL("nz"),
-    PAR("py"),
-    POL("pl"),
-    POR("pt"),
-    SCO("gb-sct"),
-    SEN("sn"),
-    SRB("rs"),
-    SUI("ch"),
-    SWE("se"),
-    TUN("tn"),
-    UKR("ua"),
-    URU("uy"),
-    USA("us"),
-    WAL("gb-wls"),
-    UNKNOWN("un");
+    ARG("🇦🇷"),
+    AUS("🇦🇺"),
+    AUT("🇦🇹"),
+    BEL("🇧🇪"),
+    BRA("🇧🇷"),
+    CAN("🇨🇦"),
+    CIV("🇨🇮"),
+    CRO("🇭🇷"),
+    CZE("🇨🇿"),
+    DEN("🇩🇰"),
+    EGY("🇪🇬"),
+    ENG("🏴"),
+    ESP("🇪🇸"),
+    FRA("🇫🇷"),
+    GEO("🇬🇪"),
+    GER("🇩🇪"),
+    GHA("🇬🇭"),
+    GRE("🇬🇷"),
+    IRL("🇮🇪"),
+    ITA("🇮🇹"),
+    JAM("🇯🇲"),
+    JPN("🇯🇵"),
+    KOR("🇰🇷"),
+    MAR("🇲🇦"),
+    MEX("🇲🇽"),
+    NED("🇳🇱"),
+    NGA("🇳🇬"),
+    NOR("🇳🇴"),
+    NZL("🇳🇿"),
+    PAR("🇵🇾"),
+    POL("🇵🇱"),
+    POR("🇵🇹"),
+    SCO("🏴"),
+    SEN("🇸🇳"),
+    SRB("🇷🇸"),
+    SUI("🇨🇭"),
+    SWE("🇸🇪"),
+    TUN("🇹🇳"),
+    UKR("🇺🇦"),
+    URU("🇺🇾"),
+    USA("🇺🇸"),
+    WAL("🏴"),
+    UNKNOWN("🌍");
 
-    private final String flagIconCode;
+    private final String emoji;
 
-    NationFlag(String flagIconCode) {
-        this.flagIconCode = flagIconCode;
+    NationFlag(String emoji) {
+        this.emoji = emoji;
     }
 
-    public String getFlagIconCode() {
-        return flagIconCode;
-    }
-
-    public String getFlagIconClass() {
-        return "fi fi-" + flagIconCode;
+    public String getEmoji() {
+        return emoji;
     }
 
     public static NationFlag fromCode(String code) {
