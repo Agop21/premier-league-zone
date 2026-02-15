@@ -75,6 +75,16 @@ public class PlayerService {
         return playerRepository.findAll().stream()
                 .map(Player::getTeam)
                 .distinct()
+                .sorted()
+                .toList();
+    }
+
+    public List<String> getAllNations() {
+        return playerRepository.findAll().stream()
+                .map(Player::getNation)
+                .filter(n -> n != null && !n.isBlank())
+                .distinct()
+                .sorted()
                 .toList();
     }
 

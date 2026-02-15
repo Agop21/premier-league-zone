@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:insert="~{./fragments/head.html}"></head>
-<body>
+<body class="pt-24">
 
 <th:block th:insert="~{./fragments/header.html}" />
 
+<div class="overflow-x-auto">
+    <table class="min-w-full border border-gray-300 text-center text-sm">
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered align-middle text-center">
-    <thead class="table-dark">
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Minutes</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalties</th>
-      <th>Yellow Cards</th>
-      <th>Red Cards</th>
-      <th>xG</th>
-      <th>xAG</th>
-      <th>Team</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="player : ${players}">
-      <td th:text="${player.name}"></td>
-      <td th:text="${player.position}"></td>
-      <td th:text="${player.age}"></td>
-      <td th:text="${player.mp}"></td>
-      <td th:text="${player.starts}"></td>
-      <td th:text="${player.min}"></td>
-      <td th:text="${player.goals}"></td>
-      <td th:text="${player.assists}"></td>
-      <td th:text="${player.penaltyKicks}"></td>
-      <td th:text="${player.yellowCards}"></td>
-      <td th:text="${player.redCards}"></td>
-      <td th:text="${player.xg}"></td>
-      <td th:text="${player.xag}"></td>
-      <td th:text="${player.team}"></td>
-    </tr>
-    </tbody>
-  </table>
+        <!-- Header -->
+        <thead class="bg-gray-800 text-white">
+        <tr>
+            <th class="px-4 py-2 border-b border-gray-600">Name</th>
+            <th class="px-4 py-2 border-b border-gray-600">Position</th>
+            <th class="px-4 py-2 border-b border-gray-600">Age</th>
+            <th class="px-4 py-2 border-b border-gray-600">Matches</th>
+            <th class="px-4 py-2 border-b border-gray-600">Starts</th>
+            <th class="px-4 py-2 border-b border-gray-600">Minutes</th>
+            <th class="px-4 py-2 border-b border-gray-600">Goals</th>
+            <th class="px-4 py-2 border-b border-gray-600">Assists</th>
+            <th class="px-4 py-2 border-b border-gray-600">Penalties</th>
+            <th class="px-4 py-2 border-b border-gray-600">Yellow Cards</th>
+            <th class="px-4 py-2 border-b border-gray-600">Red Cards</th>
+            <th class="px-4 py-2 border-b border-gray-600">xG</th>
+            <th class="px-4 py-2 border-b border-gray-600">xAG</th>
+            <th class="px-4 py-2 border-b border-gray-600">Team</th>
+        </tr>
+        </thead>
+
+        <!-- Body -->
+        <tbody>
+        <tr th:each="player : ${players}" class="odd:bg-white even:bg-gray-100">
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.name}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.position}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.age}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.mp}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.starts}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.min}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.goals}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.assists}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.penaltyKicks}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.yellowCards}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.redCards}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.xg}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.xag}"></td>
+            <td class="px-4 py-2 border-b border-gray-300" th:text="${player.team}"></td>
+        </tr>
+        </tbody>
+
+    </table>
 </div>
+
 
 
 <!-- Footer -->
